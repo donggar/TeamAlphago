@@ -1,6 +1,17 @@
 #pragma once
 #include "gameNode.h"
 
+struct tile
+{
+	image* _texture;
+	bool _solid;
+};
+
+struct wall
+{
+
+};
+
 class level
 {
 private:
@@ -19,8 +30,8 @@ public:
 	void release(void);
 	void render(void);
 	
-	bool getTest(int x, int y) { 
+	bool getTest(int x, int y) {
 		if (x * y > _width * _height || x < 0 || y < 0) return false;
-		return _tilePreset.find(_tiles[_width * y + x])->second.isSolid();
+		return _tilePreset.find(_tiles[_width * y + x])->second._solid;
 	}
 };

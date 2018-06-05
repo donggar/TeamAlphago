@@ -105,9 +105,6 @@
     <ClInclude Include="level.h">
       <Filter>mainGame\map</Filter>
     </ClInclude>
-    <ClInclude Include="tile.h">
-      <Filter>mainGame\map</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -159,9 +156,6 @@
       <Filter>2DGameFrameWork\animation</Filter>
     </ClCompile>
     <ClCompile Include="level.cpp">
-      <Filter>mainGame\map</Filter>
-    </ClCompile>
-    <ClCompile Include="tile.cpp">
       <Filter>mainGame\map</Filter>
     </ClCompile>
   </ItemGroup>
