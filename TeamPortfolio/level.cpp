@@ -20,6 +20,10 @@ void level::release(void)
 {
 }
 
-void level::render(void)
+void level::renderFloor(void)
+{
+}
+
+void level::renderWall(void)
 {
 }

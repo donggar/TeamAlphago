@@ -74,7 +74,7 @@ void mainGame::render()
 		(*it)->render();
 	}
 	RECT bound = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2, WINSIZEX / _zoom, WINSIZEY / _zoom);
-	StretchBlt(IMAGEMANAGER->findImage("a")->getMemDC(), 0, 0, WINSIZEX, WINSIZEY, this->getBackBuffer()->getMemDC(), bound.left, bound.top, bound.right - bound.left, bound.bottom - bound.top, SRCCOPY);
-	TIMEMANAGER->render(IMAGEMANAGER->findImage("a")->getMemDC());
-	IMAGEMANAGER->findImage("a")->render(getHDC());
+	StretchBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, getMemDC(), bound.left, bound.top, bound.right - bound.left, bound.bottom - bound.top, SRCCOPY);
+	TIMEMANAGER->render(getMemDC());
+	this->getBackBuffer()->render(getHDC());
 }
