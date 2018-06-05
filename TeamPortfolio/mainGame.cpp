@@ -1,4 +1,4 @@
-#include "stdafx.h"
+﻿#include "stdafx.h"
 #include "mainGame.h"
 
 
@@ -69,12 +69,19 @@ void mainGame::update(void)
 void mainGame::render()
 {
 	PatBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, WHITENESS);
+
+	//플레이어 포인터가 플래이어 캐릭터 클래스의 주소로 향할시 플래이어 캐릭터를 렌더
 	if (_player == _character) _character->render();
+
+	//자동차들 렌더
 	for (vector<vehicle*>::iterator it = _vCars.begin(); it != _vCars.end(); it++) {
 		(*it)->render();
 	}
+
+	//백버퍼를 _zoom배만큼 확대함
 	RECT bound = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2, WINSIZEX / _zoom, WINSIZEY / _zoom);
 	StretchBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, getMemDC(), bound.left, bound.top, bound.right - bound.left, bound.bottom - bound.top, SRCCOPY);
+
 	TIMEMANAGER->render(getMemDC());
 	this->getBackBuffer()->render(getHDC());
 }
