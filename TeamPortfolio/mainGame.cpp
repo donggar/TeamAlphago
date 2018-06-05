@@ -29,8 +29,6 @@ HRESULT mainGame::init(void)
 	_character = new npc;
 	_character->init(IMAGEMANAGER->findImage("test"), 300.0f, 100.0f, 1.0f, 0.0f);
 	_player = _character;
-	_vWalls.push_back(new wall);
-	//_vWalls.back()->init(IMAGEMANAGER->findImage("wall"), );
 	_zoom = 1.0f;
 	return S_OK;
 }
@@ -63,9 +61,6 @@ void mainGame::update(void)
 			}
 		}
 	}
-	//if (KEYMANAGER->isStayKeyDown('A')) _zoom -= 0.05f;
-	//if (KEYMANAGER->isStayKeyDown('D')) _zoom += 0.05f;
-	//_zoom = clip(_zoom, 1.0f, 2.0f);
 	_zoom = 1.8f - _player->getVelocity() / _player->getSpeed();
 	_zoom = clip(_zoom, 1.0f, 1.8f);
 	setCameraCenter({ long(_player->getPosition().x), long(_player->getPosition().y) });

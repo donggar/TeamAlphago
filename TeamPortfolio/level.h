@@ -7,7 +7,7 @@ struct tile
 	bool _solid;
 };
 
-struct wall
+struct wall : public tile
 {
 
 };
