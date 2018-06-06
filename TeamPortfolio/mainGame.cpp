@@ -14,10 +14,10 @@ mainGame::~mainGame()
 HRESULT mainGame::init(void)
 {
 	gameNode::init(true);  
-	IMAGEMANAGER->addImage("taxi", "car_taxi.bmp", 64, 36, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addImage("bug", "car_bug.bmp", 52, 30, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("test", "temprun.bmp", 144, 20, 6, 1, true, RGB(255, 0, 255));
-	IMAGEMANAGER->addFrameImage("wall", "wall_1.bmp", 128, 64, 2, 1, false, RGB(255, 0, 255));
+	IMAGEMANAGER->addImage("taxi", "image/car_taxi.bmp", 64, 36, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addImage("bug", "image/car_bug.bmp", 52, 30, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("test", "image/temprun.bmp", 144, 20, 6, 1, true, RGB(255, 0, 255));
+	IMAGEMANAGER->addFrameImage("wall", "image/wall_1.bmp", 128, 64, 2, 1, false, RGB(255, 0, 255));
 	IMAGEMANAGER->addImage("a", WINSIZEX, WINSIZEY);
 	vehicle* temp;
 	temp = new vehicle;
