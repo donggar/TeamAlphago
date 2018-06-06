@@ -81,7 +81,10 @@ void mainGame::render()
 	//백버퍼를 _zoom배만큼 확대함
 	RECT bound = RectMakeCenter(WINSIZEX / 2, WINSIZEY / 2, WINSIZEX / _zoom, WINSIZEY / _zoom);
 	StretchBlt(getMemDC(), 0, 0, WINSIZEX, WINSIZEY, getMemDC(), bound.left, bound.top, bound.right - bound.left, bound.bottom - bound.top, SRCCOPY);
-	//
+	
+	//UI는 여기서 렌더
 	TIMEMANAGER->render(getMemDC());
+
+	//백버퍼 렌더
 	this->getBackBuffer()->render(getHDC());
 }
